@@ -11,9 +11,20 @@ server.connection({
 server.register(Vision, (err) => {
 	server.views({
 		engines: {
-			handlebars: {
+			html: {
 				module: require('handlebars')
 			}
+/* Example for engine that handle extension jsx
+			,jsx: {
+				module: require('jsx')
+			}
+*/
+/* Example for doing async rendering
+			html: {
+				module: require('someasyncrenderingengine'),
+				compileMode: 'async'
+			}
+*/
 		},
 		relativeTo: __dirname,
 		path: 'templates'
